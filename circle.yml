@@ -1,0 +1,16 @@
+machine:
+  ruby:
+    version: 2.2.3
+  environment:
+    GOVERSION: 1.5.1
+    GOROOT: ${HOME}/go
+    PATH: ${GOROOT}/bin:${PATH}
+  post:
+    - curl https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz |tar xz
+dependencies:
+  override:
+    - make deps
+test:
+  override:
+    - make style && [[ ! $(git diff) ]]
+    - make test |tee log.out && ! grep WARN log.out

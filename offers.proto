@@ -1,0 +1,105 @@
+syntax = "proto2";
+
+package cakeproto;
+
+import "common.proto";
+
+message Offer {
+  message Contract {
+    message Rule {
+      optional int64 id = 1;
+      optional string name = 2;
+      optional int64 order = 3;
+      optional bool active = 4;
+      optional IdName redirect_offer = 5;
+    }
+
+    message GeoTarget {
+      optional Country country = 1;
+      optional IdName redirect_contract = 2;
+    }
+
+    optional int64 id = 1;
+    optional string name = 2;
+
+    optional IdName price_format = 3;
+    optional Money current_payout = 4;
+    optional Money current_received = 5;
+
+    optional string offer_link = 6;
+    optional string thankyou_link = 7;
+
+    optional bool hidden = 8;
+    optional IdName targeting_method = 9;
+
+    repeated EventOverride event_overrides = 10;
+    repeated HistorizedMoney payouts = 11;
+    repeated HistorizedMoney prices_received = 12;
+    repeated GeoTarget allowed_countries = 13;
+    repeated GeoTarget disallowed_countries = 14;
+    repeated Rule rules = 15;
+  }
+
+  message Tier {
+    optional IdName price_format = 1;
+    optional IdName affiliate_tier = 2;
+    optional IdName contract = 3;
+  }
+
+  optional int64 id = 1;
+  optional string name = 2;
+
+  optional IdName advertiser = 3;
+  optional IdName vertical = 4;
+  optional IdName type = 5;
+  optional IdName status = 6;
+
+  optional bool hidden = 7;
+  optional string image_link = 8;
+
+  optional int64 default_contract_id = 9;
+  repeated Contract contracts = 10;
+  repeated Tier tiers = 11;
+  repeated IdName tags = 12;
+  repeated MediaType allowed_media_types = 13;
+  optional Currency currency = 14;
+  optional bool ssl = 15;
+
+  // suppression_amount omitted - no way to recreate in UI
+  optional Cap click_cap = 16;
+  optional Cap conversion_cap = 17;
+
+  optional int64 click_cookie_days = 18;
+  optional int64 impression_cookie_days = 19;
+  optional bool enable_view_thru_conversions = 20;
+  optional bool click_trumps_impression = 21;
+  optional bool disable_click_deduplication = 22;
+  optional bool disable_impression_deduplication = 23;
+  optional IdName voucher_code_attribution = 24;
+  optional bool last_touch = 25;
+  optional bool enable_transaction_id_deduplication = 26;
+  optional bool conversions_from_whitelist_only = 27;
+  optional PixelInfo pixel_info = 28;
+  optional bool fire_global_pixel = 29;
+  optional bool fire_pixel_on_non_paid_conversions = 30;
+  optional bool disable_prepop_appending = 31;
+  optional IdName redirect_offer = 32;
+  optional bool redirect404 = 33;
+  optional int64 session_regeneration_seconds = 34;
+  optional IdName session_regeneration_type = 35;
+  optional SuppressionList suppression_list = 36;
+  optional string unsubscribe_link = 37;
+  optional string preview_link = 38;
+  optional string description = 39;
+  optional string restrictions = 40;
+  optional string advertiser_extended_terms = 41;
+  optional string testing_instructions = 42;
+  optional string from_lines = 43;
+  optional string subject_lines = 44;
+  repeated Upsell upsells = 45;
+  optional string thankyou_html = 46;
+  optional string notes = 47;
+
+  optional TimeWithZone date_created = 48;
+  optional TimeWithZone expiration_date = 49;
+}

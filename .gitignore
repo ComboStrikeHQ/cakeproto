@@ -1,0 +1,9 @@
+/out/
+
+*.orig
+*.rb
+*.go
+*.cc
+*.h
+*.java
+*.out

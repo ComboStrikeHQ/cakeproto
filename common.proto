@@ -1,0 +1,120 @@
+syntax = "proto2";
+
+package cakeproto;
+
+message IdName {
+  optional int64 id = 1;
+  optional string name = 2;
+}
+
+message TimeWithZone {
+  optional int64 unix_seconds = 1;
+  optional string timezone_location = 2;
+}
+
+message Currency {
+  optional int64 id = 1;
+  optional string symbol = 2;
+  optional string name = 3;
+  optional string abbr = 4;
+}
+
+message PixelInfo {
+  optional string html = 1;
+  optional IdName hash_type = 2;
+  optional string postback_url = 3;
+  optional int64 postback_delay_ms = 4;
+}
+
+message Money {
+  optional bool is_percentage = 1;
+  optional double amount = 2;
+  optional string formatted_amount = 3;
+}
+
+message MediaType {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional int64 category_id = 3;
+  optional string category_name = 4;
+}
+
+message Country {
+  optional string code = 1;
+  optional string name = 2;
+}
+
+message SuppressionList {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional IdName type = 3;
+  optional bool md5_only = 4;
+  optional TimeWithZone date_created = 5;
+  optional TimeWithZone date_updated = 6;
+  optional string list_location = 7;
+}
+
+message Contact {
+  optional int64 id = 1;
+  optional IdName type = 2;
+  optional IdName role = 3;
+  // department omitted - cannot be set in UI
+
+  optional string first_name = 4;
+  // middle_name omitted - cannot be set in UI
+  optional string last_name = 5;
+  optional string email_address = 6;
+  optional string title = 7;
+  optional string phone_work = 8;
+  optional string phone_cell = 9;
+  optional string phone_fax = 10;
+  optional string im_service = 11;
+  optional string im_name = 12;
+
+  optional bool include_in_mass_emails = 13;
+  optional string notes = 14;
+}
+
+message Blacklist {
+  optional IdName advertiser = 1;
+  optional IdName offer = 2;
+  optional IdName affiliate = 3;
+  optional IdName sub_affiliate = 4;
+  optional IdName reason = 5;
+  optional IdName type = 6;
+  optional TimeWithZone date_created = 7;
+}
+
+message Cap {
+  optional int64 limit = 1;
+  optional IdName interval = 2;
+  optional TimeWithZone start_date = 3;
+  optional bool review_no_redirect = 4;
+}
+
+message HistorizedMoney {
+  optional bool current = 1;
+  optional TimeWithZone start_date = 2;
+  optional Money amount = 3;
+  optional string notes = 4;
+}
+
+message EventOverride {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional bool active = 3;
+  optional string payout_fallback = 4;
+  optional string received_fallback = 5;
+  optional Cap cap = 6;
+  optional TimeWithZone start_date = 7;
+  optional bool review_no_redirect = 8;
+}
+
+message Upsell {
+  optional IdName offer_contract = 1;
+  optional IdName creative = 2;
+  optional int64 order = 3;
+  optional string top_html = 4;
+  optional string bottom_html = 5;
+  optional bool prepop_link = 6;
+}
