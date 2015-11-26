@@ -13,4 +13,4 @@ dependencies:
 test:
   override:
     - make style && [[ ! $(git diff) ]]
-    - make test |tee log.out && ! grep WARN log.out
+    - make test 2>&1 |tee log.out && ! grep WARN log.out
