@@ -95,7 +95,7 @@ message Cap {
 message HistorizedMoney {
   optional bool current = 1;
   optional TimeWithZone start_date = 2;
-  optional Money amount = 3;
+  optional Money money = 3;
   optional string notes = 4;
 }
 
