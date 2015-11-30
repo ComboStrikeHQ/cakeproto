@@ -118,3 +118,11 @@ message Upsell {
   optional string bottom_html = 5;
   optional bool prepop_link = 6;
 }
+
+message ExchangeRate {
+  optional Currency base_currency = 1;
+  optional Currency quote_currency = 2;
+  optional TimeWithZone start_date = 3;
+  optional TimeWithZone end_date = 4;
+  optional double rate = 5;
+}
