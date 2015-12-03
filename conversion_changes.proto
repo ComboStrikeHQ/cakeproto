@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package cakeproto;
+
+import "common.proto";
+
+message ConversionChange {
+  optional int64 id = 1;
+  optional TimeWithZone conversion_date = 2;
+  optional TimeWithZone last_updated = 3;
+
+  // included are only fields which are actually changeable - load Conversion objects for full data
+  optional MoneyWithCurrency paid = 4;
+  optional MoneyWithCurrency received = 5;
+  optional Disposition current_disposition = 6;
+  optional string note = 7;
+}

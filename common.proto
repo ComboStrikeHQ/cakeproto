@@ -32,6 +32,12 @@ message Money {
   optional string formatted_amount = 3;
 }
 
+message MoneyWithCurrency {
+  optional int64 currency_id = 1;
+  optional double amount = 2;
+  optional string formatted_amount = 3;
+}
+
 message MediaType {
   optional int64 id = 1;
   optional string name = 2;
@@ -40,6 +46,11 @@ message MediaType {
 }
 
 message Country {
+  optional string code = 1;
+  optional string name = 2;
+}
+
+message Region {
   optional string code = 1;
   optional string name = 2;
 }
@@ -125,4 +136,12 @@ message ExchangeRate {
   optional TimeWithZone start_date = 3;
   optional TimeWithZone end_date = 4;
   optional double rate = 5;
+}
+
+message Disposition {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional IdName type = 3;
+  optional string contact = 4;
+  optional TimeWithZone disposition_date = 5;
 }
