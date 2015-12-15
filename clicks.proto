@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+package cakeproto;
+
+import "common.proto";
+
+message Click {
+  optional int64 id = 1;
+  optional int64 visitor_id = 2;
+  optional int64 request_session_id = 3;
+  optional TimeWithZone click_date = 4;
+
+  optional IdName affiliate = 5;
+  optional IdName advertiser = 6;
+  optional IdName offer = 7;
+  optional IdName offer_contract = 8;
+  optional int64 campaign_id = 9;
+  optional IdName creative = 10;
+
+  optional string sub_id1 = 11;
+  optional string sub_id2 = 12;
+  optional string sub_id3 = 13;
+  optional string sub_id4 = 14;
+  optional string sub_id5 = 15;
+
+  optional string ip_address = 16;
+  optional string user_agent = 17;
+  optional string referrer_url = 18;
+  // search_term omitted - no way to reproduce in UI
+  optional string request_url = 19;
+  optional string redirect_url = 20;
+
+  optional Country country = 21;
+  optional Region region = 22;
+  optional IdName isp = 23;
+
+  optional string disposition = 24;
+  optional int64 paid_action = 25;
+  // duplicate, duplicate_clicks and total_clicks omitted - no need for duplicate clicks
+}
