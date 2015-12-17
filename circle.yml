@@ -1,8 +1,8 @@
 machine:
   ruby:
-    version: 2.2.3
+    version: 2.2.4
   environment:
-    GOVERSION: 1.5.1
+    GOVERSION: 1.5.2
     GOROOT: ${HOME}/go
     PATH: ${GOROOT}/bin:${PATH}
   post:
