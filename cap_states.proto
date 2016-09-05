@@ -21,6 +21,7 @@ message CapState {
   optional TimeWithZone start_date = 10;
   optional TimeWithZone end_date = 11;
   optional int64 current = 12;
-  optional MaybeInt limit = 13;
+  optional int64 deprecated_limit = 13;
+  optional MaybeInt limit = 14;
   // percent_reached omitted - calculate it yourself
 }
