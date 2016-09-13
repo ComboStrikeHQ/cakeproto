@@ -145,3 +145,8 @@ message Disposition {
   optional string contact = 4;
   optional TimeWithZone disposition_date = 5;
 }
+
+message MaybeInt {
+  optional int64 value = 1;
+  optional bool has_value = 2;
+}
