@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package cakeproto;
 
@@ -6,25 +6,25 @@ import "common.proto";
 
 message Creative {
   message File {
-    optional int64 id = 1;
-    optional string name = 2;
-    optional string link = 3;
-    optional bool preview = 4;
-    optional TimeWithZone date_created = 5;
+    int64 id = 1;
+    string name = 2;
+    string link = 3;
+    bool preview = 4;
+    TimeWithZone date_created = 5;
   }
 
-  optional int64 id = 1;
-  optional string name = 2;
-  optional int64 offer_id = 3;
-  optional IdName type = 4;
-  optional IdName status = 5;
+  int64 id = 1;
+  string name = 2;
+  int64 offer_id = 3;
+  IdName type = 4;
+  IdName status = 5;
 
-  optional string offer_link_override = 6;
-  optional int64 width = 7;
-  optional int64 height = 8;
+  string offer_link_override = 6;
+  int64 width = 7;
+  int64 height = 8;
   repeated File files = 9;
 
-  optional TimeWithZone date_created = 10;
-  optional TimeWithZone expiration_date = 11;
-  optional string notes = 12;
+  TimeWithZone date_created = 10;
+  TimeWithZone expiration_date = 11;
+  string notes = 12;
 }

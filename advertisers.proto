@@ -1,35 +1,35 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package cakeproto;
 
 import "common.proto";
 
 message Advertiser {
-  optional int64 id = 1;
-  optional string name = 2;
+  int64 id = 1;
+  string name = 2;
 
-  optional IdName account_manager = 3;
-  optional IdName account_status = 4;
+  IdName account_manager = 3;
+  IdName account_status = 4;
 
-  optional string street1 = 5;
-  optional string street2 = 6;
-  optional string city = 7;
-  optional string state = 8;
-  optional string zip_code = 9;
-  optional string country = 10;
-  optional string website = 11;
+  string street1 = 5;
+  string street2 = 6;
+  string city = 7;
+  string state = 8;
+  string zip_code = 9;
+  string country = 10;
+  string website = 11;
 
   repeated Contact contacts = 12;
   repeated IdName tags = 13;
   repeated SuppressionList suppression_lists = 14;
   repeated Blacklist blacklists = 15;
 
-  optional IdName billing_cycle = 16;
-  optional string quickbooks_id = 17;
-  optional bool online_signup = 18;
+  IdName billing_cycle = 16;
+  string quickbooks_id = 17;
+  bool online_signup = 18;
   // signup_ip_address omitted - for privacy reasons
   // api_key omitted - for security reasons
-  optional TimeWithZone date_created = 19;
+  TimeWithZone date_created = 19;
   //date_last_accepted_terms omitted - cannot be reproduced in UI
-  optional string notes = 20;
+  string notes = 20;
 }

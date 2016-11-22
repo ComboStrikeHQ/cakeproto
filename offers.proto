@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package cakeproto;
 
@@ -7,30 +7,30 @@ import "common.proto";
 message Offer {
   message Contract {
     message Rule {
-      optional int64 id = 1;
-      optional string name = 2;
-      optional int64 order = 3;
-      optional bool active = 4;
-      optional IdName redirect_offer = 5;
+      int64 id = 1;
+      string name = 2;
+      int64 order = 3;
+      bool active = 4;
+      IdName redirect_offer = 5;
     }
 
     message GeoTarget {
-      optional Country country = 1;
-      optional IdName redirect_contract = 2;
+      Country country = 1;
+      IdName redirect_contract = 2;
     }
 
-    optional int64 id = 1;
-    optional string name = 2;
+    int64 id = 1;
+    string name = 2;
 
-    optional IdName price_format = 3;
-    optional Money current_payout = 4;
-    optional Money current_received = 5;
+    IdName price_format = 3;
+    Money current_payout = 4;
+    Money current_received = 5;
 
-    optional string offer_link = 6;
-    optional string thankyou_link = 7;
+    string offer_link = 6;
+    string thankyou_link = 7;
 
-    optional bool hidden = 8;
-    optional IdName targeting_method = 9;
+    bool hidden = 8;
+    IdName targeting_method = 9;
 
     repeated EventOverride event_overrides = 10;
     repeated HistorizedMoney payouts = 11;
@@ -41,65 +41,65 @@ message Offer {
   }
 
   message Tier {
-    optional IdName price_format = 1;
-    optional IdName affiliate_tier = 2;
-    optional IdName contract = 3;
+    IdName price_format = 1;
+    IdName affiliate_tier = 2;
+    IdName contract = 3;
   }
 
-  optional int64 id = 1;
-  optional string name = 2;
+  int64 id = 1;
+  string name = 2;
 
-  optional IdName advertiser = 3;
-  optional IdName vertical = 4;
-  optional IdName type = 5;
-  optional IdName status = 6;
+  IdName advertiser = 3;
+  IdName vertical = 4;
+  IdName type = 5;
+  IdName status = 6;
 
-  optional bool hidden = 7;
-  optional string image_link = 8;
+  bool hidden = 7;
+  string image_link = 8;
 
-  optional int64 default_contract_id = 9;
+  int64 default_contract_id = 9;
   repeated Contract contracts = 10;
   repeated Tier tiers = 11;
   repeated IdName tags = 12;
   repeated MediaType allowed_media_types = 13;
-  optional Currency currency = 14;
-  optional bool ssl = 15;
+  Currency currency = 14;
+  bool ssl = 15;
 
   // suppression_amount omitted - no way to recreate in UI
-  optional Cap click_cap = 16;
-  optional Cap conversion_cap = 17;
+  Cap click_cap = 16;
+  Cap conversion_cap = 17;
 
-  optional int64 click_cookie_days = 18;
-  optional int64 impression_cookie_days = 19;
-  optional bool enable_view_thru_conversions = 20;
-  optional bool click_trumps_impression = 21;
-  optional bool disable_click_deduplication = 22;
-  optional bool disable_impression_deduplication = 23;
-  optional IdName voucher_code_attribution = 24;
-  optional bool last_touch = 25;
-  optional bool enable_transaction_id_deduplication = 26;
-  optional bool conversions_from_whitelist_only = 27;
-  optional PixelInfo pixel_info = 28;
-  optional bool fire_global_pixel = 29;
-  optional bool fire_pixel_on_non_paid_conversions = 30;
-  optional bool disable_prepop_appending = 31;
-  optional IdName redirect_offer = 32;
-  optional bool redirect404 = 33;
-  optional int64 session_regeneration_seconds = 34;
-  optional IdName session_regeneration_type = 35;
-  optional SuppressionList suppression_list = 36;
-  optional string unsubscribe_link = 37;
-  optional string preview_link = 38;
-  optional string description = 39;
-  optional string restrictions = 40;
-  optional string advertiser_extended_terms = 41;
-  optional string testing_instructions = 42;
-  optional string from_lines = 43;
-  optional string subject_lines = 44;
+  int64 click_cookie_days = 18;
+  int64 impression_cookie_days = 19;
+  bool enable_view_thru_conversions = 20;
+  bool click_trumps_impression = 21;
+  bool disable_click_deduplication = 22;
+  bool disable_impression_deduplication = 23;
+  IdName voucher_code_attribution = 24;
+  bool last_touch = 25;
+  bool enable_transaction_id_deduplication = 26;
+  bool conversions_from_whitelist_only = 27;
+  PixelInfo pixel_info = 28;
+  bool fire_global_pixel = 29;
+  bool fire_pixel_on_non_paid_conversions = 30;
+  bool disable_prepop_appending = 31;
+  IdName redirect_offer = 32;
+  bool redirect404 = 33;
+  int64 session_regeneration_seconds = 34;
+  IdName session_regeneration_type = 35;
+  SuppressionList suppression_list = 36;
+  string unsubscribe_link = 37;
+  string preview_link = 38;
+  string description = 39;
+  string restrictions = 40;
+  string advertiser_extended_terms = 41;
+  string testing_instructions = 42;
+  string from_lines = 43;
+  string subject_lines = 44;
   repeated Upsell upsells = 45;
-  optional string thankyou_html = 46;
-  optional string notes = 47;
+  string thankyou_html = 46;
+  string notes = 47;
 
-  optional TimeWithZone date_created = 48;
-  optional TimeWithZone expiration_date = 49;
+  TimeWithZone date_created = 48;
+  TimeWithZone expiration_date = 49;
 }
