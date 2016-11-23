@@ -7,6 +7,7 @@ machine:
     PATH: ${GOROOT}/bin:${PATH}
     PROTOCVERSION: 3.1.0
   post:
+    - sudo apt-get install astyle
     - curl -L -o protoc.zip https://github.com/google/protobuf/releases/download/v${PROTOCVERSION}/protoc-${PROTOCVERSION}-linux-x86_64.zip
     - sudo unzip protoc.zip bin/protoc -d /usr/local && sudo chmod +x /usr/local/bin/protoc
     - curl https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz |tar xz
