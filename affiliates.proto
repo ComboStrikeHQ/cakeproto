@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package cakeproto;
 
@@ -6,27 +6,27 @@ import "common.proto";
 
 message Affiliate {
   message PaymentType {
-    optional int64 id = 1;
-    optional string name = 2;
-    optional string info = 3;
+    int64 id = 1;
+    string name = 2;
+    string info = 3;
   }
 
-  optional int64 id = 1;
-  optional string name = 2;
+  int64 id = 1;
+  string name = 2;
 
-  optional IdName tier = 3;
-  optional IdName account_manager = 4;
-  optional IdName account_status = 5;
+  IdName tier = 3;
+  IdName account_manager = 4;
+  IdName account_status = 5;
 
-  optional string street1 = 6;
-  optional string street2 = 7;
-  optional string city = 8;
-  optional string state = 9;
-  optional string zip_code = 10;
-  optional string country = 11;
-  optional string website = 12;
+  string street1 = 6;
+  string street2 = 7;
+  string city = 8;
+  string state = 9;
+  string zip_code = 10;
+  string country = 11;
+  string website = 12;
 
-  optional PaymentType payment_type = 13;
+  PaymentType payment_type = 13;
   repeated Contact contacts = 14;
   repeated IdName tags = 15;
 
@@ -35,37 +35,37 @@ message Affiliate {
   repeated IdName traffic_vertical_categories = 18;
   repeated Country traffic_countries = 19;
 
-  optional double minimum_payment_threshold = 20;
-  optional double auto_payment_fee = 21;
-  optional string payment_to = 22;
-  optional string tax_class = 23;
-  optional string ssn_tax_id = 24;
-  optional bool pay_vat = 25;
-  optional string swift_iban = 26;
+  double minimum_payment_threshold = 20;
+  double auto_payment_fee = 21;
+  string payment_to = 22;
+  string tax_class = 23;
+  string ssn_tax_id = 24;
+  bool pay_vat = 25;
+  string swift_iban = 26;
 
-  optional bool referrals_enabled = 27;
-  optional IdName referred_by_affiliate = 28;
-  optional string referral_info = 29;
-  optional IdName billing_cycle = 30;
-  optional Currency currency = 31;
-  optional IdName currency_payment_setting = 32;
-  optional bool online_signup = 33;
-  optional bool pay_for_conversions = 34;
-  optional bool review = 35;
-  optional bool review_new_subaffiliates = 36;
-  optional bool suppression = 37;
+  bool referrals_enabled = 27;
+  IdName referred_by_affiliate = 28;
+  string referral_info = 29;
+  IdName billing_cycle = 30;
+  Currency currency = 31;
+  IdName currency_payment_setting = 32;
+  bool online_signup = 33;
+  bool pay_for_conversions = 34;
+  bool review = 35;
+  bool review_new_subaffiliates = 36;
+  bool suppression = 37;
   // suppression_cap omitted - cannot be reproduced in UI
-  optional PixelInfo pixel_info = 38;
-  optional bool fire_global_pixel = 39;
+  PixelInfo pixel_info = 38;
+  bool fire_global_pixel = 39;
   repeated Blacklist blacklists = 40;
-  optional string redirect_domain_override = 41;
-  optional bool auto_approve_campaigns = 42;
-  optional bool auto_approve_pixels = 43;
-  optional bool hide_offers = 44;
+  string redirect_domain_override = 41;
+  bool auto_approve_campaigns = 42;
+  bool auto_approve_pixels = 43;
+  bool hide_offers = 44;
 
   // signup_ip_address omitted - for privacy reasons
   // api_key omitted - for security reasons
-  optional TimeWithZone date_created = 45;
+  TimeWithZone date_created = 45;
   //date_last_accepted_terms omitted - cannot be reproduced in UI
-  optional string notes = 46;
+  string notes = 46;
 }

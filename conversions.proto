@@ -1,58 +1,58 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package cakeproto;
 
 import "common.proto";
 
 message Conversion {
-  optional int64 id = 1;
-  optional int64 visitor_id = 2;
-  optional int64 request_session_id = 3;
-  optional int64 click_id = 4;
-  optional int64 click_request_session_id = 5;
-  optional TimeWithZone conversion_date = 6;
-  optional TimeWithZone click_date = 7;
-  optional TimeWithZone last_updated = 8;
+  int64 id = 1;
+  int64 visitor_id = 2;
+  int64 request_session_id = 3;
+  int64 click_id = 4;
+  int64 click_request_session_id = 5;
+  TimeWithZone conversion_date = 6;
+  TimeWithZone click_date = 7;
+  TimeWithZone last_updated = 8;
 
-  optional IdName event = 9;
-  optional IdName affiliate = 10;
-  optional IdName advertiser = 11;
-  optional IdName offer = 12;
-  optional IdName offer_contract = 13;
-  optional int64 campaign_id = 14;
-  optional IdName campaign_type = 15;
-  optional IdName creative = 16;
+  IdName event = 9;
+  IdName affiliate = 10;
+  IdName advertiser = 11;
+  IdName offer = 12;
+  IdName offer_contract = 13;
+  int64 campaign_id = 14;
+  IdName campaign_type = 15;
+  IdName creative = 16;
 
-  optional string sub_id1 = 17;
-  optional string sub_id2 = 18;
-  optional string sub_id3 = 19;
-  optional string sub_id4 = 20;
-  optional string sub_id5 = 21;
+  string sub_id1 = 17;
+  string sub_id2 = 18;
+  string sub_id3 = 19;
+  string sub_id4 = 20;
+  string sub_id5 = 21;
 
-  optional string ip_address = 22;
-  optional string click_ip_address = 36;
-  optional string user_agent = 23;
-  optional string click_user_agent = 37;
-  optional string source_type = 24;
+  string ip_address = 22;
+  string click_ip_address = 36;
+  string user_agent = 23;
+  string click_user_agent = 37;
+  string source_type = 24;
 
-  optional IdName price_format = 25;
+  IdName price_format = 25;
   // paid_unbilled and received_unbilled omitted - not available in ConversionChanges API
-  optional MoneyWithCurrency paid = 26;
-  optional MoneyWithCurrency received = 27;
+  MoneyWithCurrency paid = 26;
+  MoneyWithCurrency received = 27;
 
-  optional int64 step_reached = 28;
+  int64 step_reached = 28;
   // pixel_dropped, suppressed and returned omitted - not reproducible in UI
   // test omitted - fetch only non-test conversions
-  optional string transaction_id = 29;
-  optional Disposition current_disposition = 30;
-  optional MoneyWithCurrency order_total = 38;
+  string transaction_id = 29;
+  Disposition current_disposition = 30;
+  MoneyWithCurrency order_total = 38;
   // conversion_score omitted - not reproducible in UI
 
-  optional Country country = 31;
-  optional Region region = 32;
-  optional IdName language = 33;
-  optional IdName isp = 34;
+  Country country = 31;
+  Region region = 32;
+  IdName language = 33;
+  IdName isp = 34;
   // operating_system and browser omitted - parse user agent yourself
 
-  optional string note = 35;
+  string note = 35;
 }

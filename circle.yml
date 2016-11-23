@@ -1,11 +1,14 @@
 machine:
   ruby:
-    version: 2.3.0
+    version: 2.3.2
   environment:
-    GOVERSION: 1.5.3
+    GOVERSION: 1.7.3
     GOROOT: ${HOME}/go
     PATH: ${GOROOT}/bin:${PATH}
+    PROTOCVERSION: 3.1.0
   post:
+    - curl -L -o protoc.zip https://github.com/google/protobuf/releases/download/v${PROTOCVERSION}/protoc-${PROTOCVERSION}-linux-x86_64.zip
+    - sudo unzip protoc.zip bin/protoc -d /usr/local && sudo chmod +x /usr/local/bin/protoc
     - curl https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz |tar xz
 dependencies:
   override:

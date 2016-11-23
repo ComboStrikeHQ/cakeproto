@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package cakeproto;
 
@@ -6,53 +6,53 @@ import "common.proto";
 
 message Campaign {
   message VoucherCode {
-    optional string name = 1;
-    optional IdName creative = 2;
-    optional TimeWithZone start_date = 3;
-    optional TimeWithZone expiration_date = 4;
-    optional bool active = 5;
+    string name = 1;
+    IdName creative = 2;
+    TimeWithZone start_date = 3;
+    TimeWithZone expiration_date = 4;
+    bool active = 5;
   }
 
-  optional int64 id = 1;
-  optional IdName type = 2;
-  optional IdName affiliate = 3;
-  optional IdName offer = 4;
-  optional IdName offer_contract = 5;
+  int64 id = 1;
+  IdName type = 2;
+  IdName affiliate = 3;
+  IdName offer = 4;
+  IdName offer_contract = 5;
 
-  optional bool original = 6;
+  bool original = 6;
   repeated IdName blocked_sub_affiliates = 7;
   repeated IdName blocked_creatives = 8;
-  optional IdName account_status = 9;
-  optional Currency currency = 10;
-  optional IdName media_type = 11;
-  optional IdName link_display_type = 12;
+  IdName account_status = 9;
+  Currency currency = 10;
+  IdName media_type = 11;
+  IdName link_display_type = 12;
   repeated EventOverride event_overrides = 13;
 
-  optional TimeWithZone date_contacted = 14;
-  optional TimeWithZone date_io_sent = 15;
-  optional TimeWithZone date_io_signed = 16;
-  optional TimeWithZone date_creative_sent = 17;
-  optional TimeWithZone date_pixel_placed = 18;
+  TimeWithZone date_contacted = 14;
+  TimeWithZone date_io_sent = 15;
+  TimeWithZone date_io_signed = 16;
+  TimeWithZone date_creative_sent = 17;
+  TimeWithZone date_pixel_placed = 18;
 
   repeated HistorizedMoney payouts = 19;
-  optional bool paid = 20;
-  optional bool paid_redirects = 21;
-  optional bool disable_prepop_appending = 22;
-  optional string redirect_domain = 23;
-  optional Cap click_cap = 24;
-  optional Cap conversion_cap = 25;
-  optional PixelInfo pixel_info = 26;
-  optional bool disable_upsells = 27;
-  optional bool paid_upsells = 28;
-  optional bool paid_upsells_same_session_only = 29;
-  optional bool clear_session_on_conversion = 30;
+  bool paid = 20;
+  bool paid_redirects = 21;
+  bool disable_prepop_appending = 22;
+  string redirect_domain = 23;
+  Cap click_cap = 24;
+  Cap conversion_cap = 25;
+  PixelInfo pixel_info = 26;
+  bool disable_upsells = 27;
+  bool paid_upsells = 28;
+  bool paid_upsells_same_session_only = 29;
+  bool clear_session_on_conversion = 30;
   repeated Upsell upsells = 31;
   repeated VoucherCode voucher_codes = 32;
-  optional string test_link = 33;
-  optional IdName redirect_offer = 34;
-  optional bool redirect404 = 35;
-  optional TimeWithZone date_created = 36;
-  optional TimeWithZone expiration_date = 37;
-  optional string notes = 38;
+  string test_link = 33;
+  IdName redirect_offer = 34;
+  bool redirect404 = 35;
+  TimeWithZone date_created = 36;
+  TimeWithZone expiration_date = 37;
+  string notes = 38;
 }
 
