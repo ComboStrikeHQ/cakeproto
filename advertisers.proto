@@ -5,6 +5,27 @@ package cakeproto;
 import "common.proto";
 
 message Advertiser {
+  message Event {
+    int64 id = 1;
+    string name = 2;
+    IdName price_format = 3;
+
+    bool active = 4;
+    bool allow_duplicates = 5;
+    IdName transaction_id_deduplication = 6;
+
+    Money payout = 7;
+    Money received = 8;
+
+    bool portal = 9;
+    bool active_for_all_offers = 10;
+    bool fire_global_pixel = 11;
+    string postback_url = 12;
+    int64 postback_delay_ms = 13;
+    string pixel = 14;
+    bool event_payout_and_received_trumps_other_sources = 15;
+  }
+
   int64 id = 1;
   string name = 2;
 
@@ -23,6 +44,7 @@ message Advertiser {
   repeated IdName tags = 13;
   repeated SuppressionList suppression_lists = 14;
   repeated Blacklist blacklists = 15;
+  repeated Event events = 21;
 
   IdName billing_cycle = 16;
   string quickbooks_id = 17;
