@@ -36,5 +36,8 @@ message Click {
 
   string disposition = 24;
   int64 paid_action = 25;
+  MoneyWithCurrency paid = 26;
+  MoneyWithCurrency received = 27;
+
   // duplicate, duplicate_clicks and total_clicks omitted - no need for duplicate clicks
 }
