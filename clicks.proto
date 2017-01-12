@@ -9,6 +9,7 @@ message Click {
   int64 visitor_id = 2;
   int64 request_session_id = 3;
   TimeWithZone click_date = 4;
+  int64 total_clicks = 29;
 
   IdName affiliate = 5;
   IdName advertiser = 6;
@@ -32,6 +33,7 @@ message Click {
 
   Country country = 21;
   Region region = 22;
+  IdName language = 28;
   IdName isp = 23;
 
   string disposition = 24;
