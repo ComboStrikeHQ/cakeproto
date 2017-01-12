@@ -30,7 +30,6 @@ message Click {
   // search_term omitted - no way to reproduce in UI
   string request_url = 19;
   string redirect_url = 20;
-  string search_term = 30;
 
   Country country = 21;
   Region region = 22;
