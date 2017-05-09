@@ -9,8 +9,10 @@ message Conversion {
   int64 visitor_id = 2;
   int64 tracking_id = 39;
   int64 request_session_id = 3;
+  string request_session_guid = 40;
   int64 click_id = 4;
   int64 click_request_session_id = 5;
+  string click_request_session_guid = 41;
   TimeWithZone conversion_date = 6;
   TimeWithZone click_date = 7;
   TimeWithZone last_updated = 8;

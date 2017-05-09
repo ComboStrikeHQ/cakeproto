@@ -9,6 +9,7 @@ message Click {
   int64 visitor_id = 2;
   int64 tracking_id = 30;
   int64 request_session_id = 3;
+  string request_session_guid = 31;
   TimeWithZone click_date = 4;
   int64 total_clicks = 29;
 
