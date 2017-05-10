@@ -150,3 +150,10 @@ message MaybeInt {
   int64 value = 1;
   bool has_value = 2;
 }
+
+message OperatingSystem {
+  int64 id = 1;
+  string name = 2;
+  IdName version = 3;
+  IdName version_minor = 4;
+}

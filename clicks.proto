@@ -37,6 +37,7 @@ message Click {
   Region region = 22;
   IdName language = 28;
   IdName isp = 23;
+  OperatingSystem operating_system = 30;
 
   string disposition = 24;
   int64 paid_action = 25;
