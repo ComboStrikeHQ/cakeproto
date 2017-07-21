@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package cakeproto;
+
+import "common.proto";
+
+message DailySummary {
+  TimeWithZone date = 1;
+  int64 views = 2;
+  int64 clicks = 3;
+  double click_thru = 4;
+  int64 conversions = 5;
+  int64 paid = 6;
+  int64 sellable = 7;
+  double conversion_rate = 8;
+  double cpl = 9;
+  double cost = 10;
+  double rtp = 11;
+  double revenue = 12;
+  double margin = 13;
+  double profit = 14;
+  double ecp = 15;
+}
