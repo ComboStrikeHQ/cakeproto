@@ -6,13 +6,16 @@ import "common.proto";
 
 message Conversion {
   int64 id = 1;
-  int64 visitor_id = 2;
-  int64 tracking_id = 39;
-  int64 request_session_id = 3;
-  string request_session_guid = 40;
-  int64 click_id = 4;
-  int64 click_request_session_id = 5;
-  string click_request_session_guid = 41;
+  int64 original_visitor_id = 2;
+  string visitor_id = 42;
+  int64 original_tracking_id = 39;
+  string tracking_id = 43;
+  int64 original_request_session_id = 3;
+  string request_session_id = 40;
+  int64 original_click_id = 4;
+  string click_id = 44;
+  int64 original_click_request_session_id = 5;
+  string click_request_session_id = 41;
   TimeWithZone conversion_date = 6;
   TimeWithZone click_date = 7;
   TimeWithZone last_updated = 8;
