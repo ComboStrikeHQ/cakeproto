@@ -15,9 +15,9 @@ message DailySummary {
   double conversion_rate = 8;
   double cpl = 9;
   double cost = 10;
-  double rtp = 11;
+  double rpt = 11;
   double revenue = 12;
   double margin = 13;
   double profit = 14;
-  double ecp = 15;
+  double epc = 15;
 }
