@@ -2,10 +2,8 @@ syntax = "proto3";
 
 package cakeproto;
 
-import "common.proto";
-
 message DailySummary {
-  TimeWithZone date = 1;
+  string date = 1;
   int64 views = 2;
   int64 clicks = 3;
   double click_thru = 4;
