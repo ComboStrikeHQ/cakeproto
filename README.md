@@ -9,7 +9,7 @@ Used in
 
 ## Hacking
 
-- Read the whole [protobuf docs](https://developers.google.com/protocol-buffers/docs/proto)
+- Read the whole [protobuf docs](https://developers.google.com/protocol-buffers/docs/proto3)
   before even thinking about making a change!
 - Make your changes
 - Run `make deps` to install dependencies
