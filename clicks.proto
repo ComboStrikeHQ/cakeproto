@@ -6,7 +6,7 @@ import "common.proto";
 
 message Click {
   int64 original_id = 1;
-  string id = 32;
+  string id = 35;
   int64 original_visitor_id = 2;
   string visitor_id = 33;
   int64 original_tracking_id = 30;
