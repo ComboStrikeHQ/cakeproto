@@ -45,6 +45,7 @@ message Click {
   int64 paid_action = 25;
   MoneyWithCurrency paid = 26;
   MoneyWithCurrency received = 27;
+  bool duplicate = 32;
 
-  // duplicate and duplicate_clicks omitted - no need for duplicate clicks
+  // duplicate_clicks omitted - no need for duplicate clicks
 }
